@@ -8,13 +8,13 @@ changed to the non-ARM Linux version. This is currently being tested on Ubuntu 1
 ---
 
 ## HOW TO RUN
-git clone https://github.com/illogicalpartition/softethervpn-guided-installer-arm.git
 
-cd softethervpn-guided-installer-arm
-
-sudo chmod 755 softether_install_deb_arm.sh
-
-sudo ./softether_install_deb_arm.sh
+```
+git clone https://github.com/illogicalpartition/softethervpn-guided-installer-arm.git  
+cd softethervpn-guided-installer-arm  
+sudo chmod 755 softether_install_deb_arm.sh  
+sudo ./softether_install_deb_arm.sh  
+```
 
 ---
 
