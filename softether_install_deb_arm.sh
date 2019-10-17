@@ -123,6 +123,7 @@ echo -e "| __|(_) _ _  (_) ___| |_   ___  __| || |"
 echo -e "| _| | || ' \ | |(_-<| ' \ / -_)/ _' ||_|"
 echo -e "|_|  |_||_||_||_|/__/|_||_|\___|\__,_|(_)"
 printf '=%.0s' {1..41}
-echo -e "\nTo finish your configuration, be sure to download the SoftEther Server Manager.\n\n"
+echo -e "\nTo finish your configuration, be sure to download the SoftEther Server Manager,\n"
+echo -e "or visit the HTML5 console to configure it.\n\n"
 
 exit 0
