@@ -64,13 +64,12 @@ wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.30
 tar -xzf softether-vpnserver-v4.30-9696-beta-2019.07.08-linux-arm_eabi-32bit.tar.gz 
 echo "=== Installing SoftEther VPN... ==="
 cd vpnserver
-echo -e "1\n1\n1" | sudo make 
+echo -e "1\n1\n1" | sudo make > /dev/null
 cd ..
 sudo mv vpnserver /usr/local
 cd /usr/local/vpnserver
 sudo chmod 600 *
 sudo chmod 700 vpncmd vpnserver
-clear && clear
 echo -e "Done!\n"
 
 ### Check for install errors
@@ -107,7 +106,7 @@ while true; do
         echo -e "Passwords do not match, please try again.\n"
 done
 echo
-echo -e "1\n\n\nServerPasswordSet\n$pswd\n$pswd" | sudo /usr/local/vpnserver/./vpncmd
+echo -e "1\n\n\nServerPasswordSet\n$pswd\n$pswd" | sudo /usr/local/vpnserver/./vpncmd > /dev/null
 echo
 
 # Cleanup
@@ -123,7 +122,8 @@ echo -e "| __|(_) _ _  (_) ___| |_   ___  __| || |"
 echo -e "| _| | || ' \ | |(_-<| ' \ / -_)/ _' ||_|"
 echo -e "|_|  |_||_||_||_|/__/|_||_|\___|\__,_|(_)"
 printf '=%.0s' {1..41}
-echo -e "\nTo finish your configuration, be sure to download the SoftEther Server Manager,\n"
-echo -e "or visit the HTML5 console to configure it.\n\n"
+echo -e "\nTo finish your configuration, be sure to download the SoftEther Server Manager,"
+echo -e "or visit the HTML5 console to configure it."
+echo -e "Run 'sudo systemctl status vpnserver' to get the URL.\n\n"
 
 exit 0
