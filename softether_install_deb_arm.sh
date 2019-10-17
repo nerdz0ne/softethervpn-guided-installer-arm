@@ -117,13 +117,13 @@ sudo rm vpnserver.service
 ### All done!
 clear
 printf '=%.0s' {1..41}
+echo
 echo -e " ___  _        _      _             _  _"
 echo -e "| __|(_) _ _  (_) ___| |_   ___  __| || |"
 echo -e "| _| | || ' \ | |(_-<| ' \ / -_)/ _' ||_|"
 echo -e "|_|  |_||_||_||_|/__/|_||_|\___|\__,_|(_)"
 printf '=%.0s' {1..41}
 echo -e "\nTo finish your configuration, be sure to download the SoftEther Server Manager,"
-echo -e "or visit the HTML5 console to configure it."
-echo -e "Run 'sudo systemctl status vpnserver' to get the URL.\n\n"
+echo -e "to finish your configurations.\n\n"
 
 exit 0
