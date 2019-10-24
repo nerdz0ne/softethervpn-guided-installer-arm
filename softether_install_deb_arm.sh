@@ -66,7 +66,7 @@ echo "=== Installing SoftEther VPN... ==="
 cd vpnserver
 echo -e "1\n1\n1" | sudo make > /dev/null
 cd ..
-sudo cp vpnserver /usr/local
+sudo cp -r vpnserver /usr/local
 cd /usr/local/vpnserver
 sudo chmod 600 *
 sudo chmod 700 vpncmd vpnserver
