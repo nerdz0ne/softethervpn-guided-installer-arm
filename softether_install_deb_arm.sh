@@ -67,15 +67,14 @@ cd vpnserver
 echo -e "1\n1\n1" | sudo make > /dev/null
 cd ..
 sudo cp -r vpnserver /usr/local
-cd /usr/local/vpnserver
 sudo chmod 600 *
-sudo chmod 700 vpncmd vpnserver
+sudo chmod 700 /usr/local/vpnserver/vpncmd
+sudo chmod 700 /usr/local/vpnserver/vpnserver
 echo -e "Done!\n"
 
 ### Check for install errors
 echo "=== Checking for install errors... ==="
-cd /usr/local/vpnserver
-check=$(echo -e "3\nCheck" | sudo ./vpncmd | grep "The command completed successfully")
+check=$(echo -e "3\nCheck" | sudo /usr/local/vpnserver/./vpncmd | grep "The command completed successfully")
 if [ ! "$check" ]; then
   echo "Error, SoftEther did not install correctly."
   echo "Please retry the installation process."
@@ -87,7 +86,6 @@ fi
 
 ### Create service file
 echo -e "=== Creating service file... ==="
-cd ~/softethervpn-guided-installer-arm
 sudo cp vpnserver.service /lib/systemd/system
 sudo chmod 644 /lib/systemd/system/vpnserver.service
 sudo systemctl daemon-reload
@@ -105,7 +103,6 @@ while true; do
     [ "$pswd" = "$pswd2" ] && break
         echo -e "Passwords do not match, please try again.\n"
 done
-echo
 echo -e "1\n\n\nServerPasswordSet\n$pswd\n$pswd" | sudo /usr/local/vpnserver/./vpncmd > /dev/null
 echo
 
