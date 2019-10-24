@@ -18,4 +18,11 @@ sudo ./softether_install_deb_arm.sh
 
 ---
 
+## IN-PROGRESS PLAN
+
+1. Automate L2TP client setup after server install
+
+---
+
+
 SoftEther VPN website: https://www.softether.org/
