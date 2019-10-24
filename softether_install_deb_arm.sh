@@ -95,8 +95,6 @@ echo -e "Done!\n"
 
 ### Set up server password for remote configuration
 echo "=== The VPN server requires a password to be set for remote management. ==="
-pswd=""
-pswd2=""
 while true; do
     read -s -p "Enter an admin password to use: " pswd
     echo
@@ -105,7 +103,7 @@ while true; do
     [ "$pswd" = "$pswd2" ] && break
         echo -e "Passwords do not match, please try again.\n"
 done
-echo -e "1\n\n\nServerPasswordSet\n$pswd\n$pswd\n" | sudo /usr/local/vpnserver/./vpncmd > /dev/null
+echo -e "1\n\n\nServerPasswordSet\n$pswd\n$pswd" | sudo /usr/local/vpnserver/./vpncmd > /dev/null
 echo
 
 # Cleanup
