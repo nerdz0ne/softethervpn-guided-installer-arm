@@ -103,7 +103,8 @@ while true; do
     [ "$pswd" = "$pswd2" ] && break
         echo -e "Passwords do not match, please try again.\n"
 done
-echo -e "1\n\n\nServerPasswordSet\n$pswd\n$pswd" | sudo /usr/local/vpnserver/./vpncmd > /dev/null
+sudo /usr/local/vpnserver/./vpncmd /server localhost /password: /cmd ServerPasswordSet $pswd > /dev/null
+
 echo
 
 # Cleanup
