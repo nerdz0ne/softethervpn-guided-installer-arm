@@ -18,12 +18,5 @@ sudo ./softether_install_deb_arm.sh
 
 ---
 
-## POTENTIAL FUTURE PLANS
-
-1. Script to automate client-end devices
-2. Version for non-ARM devices
-
----
-
 
 SoftEther VPN website: https://www.softether.org/
