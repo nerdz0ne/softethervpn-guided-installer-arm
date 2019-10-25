@@ -105,7 +105,7 @@ while true; do
     [ "$pswd" = "$pswd2" ] && break
         echo -e "Passwords do not match, please try again.\n"
 done
-sudo /usr/local/vpnserver/./vpncmd /server localhost /password: /cmd ServerPasswordSet $pswd > /dev/null
+sudo /usr/local/vpnserver/./vpncmd /server localhost /password:none /cmd ServerPasswordSet $pswd > /dev/null
 echo -e "Password set!\n"
 
 
@@ -132,7 +132,7 @@ wlan=$(ip link show | grep wlan\[0-9] | awk '{print substr( $2, 1, length($2)-1)
 echo -e "Wired: $lan"
 echo -e "Wireless: $wlan"
 read -e -p "Enter an interface: " brInt  
-while [[ ( -z $brInt ) && ( $lan != $brInt ) || ( $wlan != $brInt ) ]]; do
+while [[ ( -z $brInt ) || ( $lan != $brInt ) || ( $wlan != $brInt ) ]]; do
 	read -e -p "Invalid entry, enter a valid interface: " brInt
 done
 sudo /usr/local/vpnserver/./vpncmd /server localhost /password:$pswd /cmd BridgeCreate $hubName /DEVICE:$brInt > /dev/null
