@@ -2,9 +2,6 @@
 Script is a guided installer for SoftEther VPN server on ARM devices.  
 It is tested working on Raspbian and Armbian.
 
-It could also be used on Ubuntu and Debian if the downloaded tarball is  
-changed to the non-ARM Linux version. This is currently being tested on Ubuntu 18.04.
-
 ---
 
 ## HOW TO RUN
@@ -18,9 +15,10 @@ sudo ./softether_install_deb_arm.sh
 
 ---
 
-## IN-PROGRESS PLAN
+## POTENTIAL FUTURE PLANS
 
-1. Automate L2TP client setup after server install
+1. Script to automate client-end devices
+2. Version for non-ARM devices
 
 ---
 
