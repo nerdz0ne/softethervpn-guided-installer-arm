@@ -1,6 +1,9 @@
 # SoftEther VPN Guided Installer for Debian ARM devices
 Script is a guided installer for SoftEther VPN server on ARM devices.  
 It is tested working on Raspbian and Armbian.
+  
+May do something to automate client-end devices or a non-ARM version  
+in the future.
 
 ---
 
