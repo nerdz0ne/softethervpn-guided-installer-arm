@@ -1,9 +1,10 @@
 # SoftEther VPN Guided Installer for Debian ARM devices
 Script is a guided installer for SoftEther VPN server on ARM devices.  
-It is tested working on Raspbian and Armbian.
   
-May do something to automate client-end devices or a non-ARM version  
-in the future.
+### UPDATE: 4/15/2021
+- Updated to download the newest version, 4.34-9745. 
+- Tested working on Raspbian Lite Buster (x86 and x64), running on Raspberry Pi 4 
+- Testing working on Armbian Buster (x86), running on Orange Pi Zero 2
 
 ---
 

@@ -40,7 +40,6 @@ sudo apt-get update -qq -y
 sudo apt-get upgrade -qq -y
 echo -e "Done!\n"
 
-
 ### Install essential packages
 echo "=== Installing SoftEther VPN dependencies... ==="
 sudo apt-get install build-essential checkinstall -qq -y
@@ -61,11 +60,11 @@ if [[ ! "$pkgInst" ]]; then
 fi
 echo -e "Done!\n"
 
-
 ### Install SoftEther VPN
 echo "=== Downloading SoftEther VPN... ==="
-wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.30-9696-beta/softether-vpnserver-v4.30-9696-beta-2019.07.08-linux-arm_eabi-32bit.tar.gz -q
-tar -xzf softether-vpnserver-v4.30-9696-beta-2019.07.08-linux-arm_eabi-32bit.tar.gz 
+seTar="https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.34-9745-beta/softether-vpnserver-v4.34-9745-beta-2020.04.05-linux-arm_eabi-32bit.tar.gz" 
+wget $seTar -q
+tar -xzf softether-vpnserver-*
 echo -e "Done!\n"
 echo "=== Installing SoftEther VPN... ==="
 cd vpnserver
@@ -89,7 +88,6 @@ else
   echo -e "No errors!\n"
 fi
 
-
 ### Create service file
 echo -e "=== Creating service file... ==="
 sudo cp vpnserver.service /lib/systemd/system
@@ -98,7 +96,6 @@ sudo systemctl daemon-reload
 sudo systemctl start vpnserver
 sudo systemctl enable vpnserver
 echo -e "Done!\n"
-
 
 ### Set up server password for remote management
 echo "=== Setting remote management password... ==="
