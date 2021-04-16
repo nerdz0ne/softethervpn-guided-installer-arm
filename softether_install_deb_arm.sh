@@ -35,26 +35,19 @@ echo -e "- illogicalpartition @ github.com -\n"
 ################################
 
 ### Update OS
-echo "=== Checking for OS updates... ==="
+echo "=== Checking for updates... ==="
 sudo apt-get update -qq -y
 sudo apt-get upgrade -qq -y
 echo -e "Done!\n"
 
 ### Install essential packages
 echo "=== Installing SoftEther VPN dependencies... ==="
-sudo apt-get install build-essential checkinstall -qq -y
+sudo apt-get install build-essential cmake gcc g++ make libncurses5-dev libssl-dev libsodium-dev libreadline-dev zlib1g-dev -qq -y
 echo "Making sure packages installed correctly..."
-pkgInst=$(dpkg-query -W --showformat='${Status}\n' build-essential | grep "install ok installed")
+pkgInst=$(dpkg-query -W --showformat='${Status}\n' build-essential cmake gcc g++ make libncurses5-dev libssl-dev libsodium-dev libreadline-dev zlib1g-dev | grep "install ok installed")
 if [[ ! "$pkgInst" ]]; then
-  echo "build-essential did not install correctly. Try installing it manually using: "
-  echo "sudo apt-get install build-essential"
-  echo "Exiting script."
-  exit 1
-fi
-pkgInst=$(dpkg-query -W --showformat='${Status}\n' checkinstall | grep "install ok installed")
-if [[ ! "$pkgInst" ]]; then
-  echo "checkinstall did not install correctly. Try installing it manually using:"
-  echo "sudo apt-get install checkinstall"
+  echo "One or more dependencies did not install correctly. Try installing them manually:"
+  echo "build-essential cmake gcc g++ make libncurses5-dev libssl-dev libsodium-dev libreadline-dev zlib1g-dev"
   echo "Exiting script."
   exit 1
 fi
