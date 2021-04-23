@@ -17,7 +17,7 @@ Script is a guided installer for SoftEther VPN server on ARM devices.
 ```
 git clone https://github.com/illogicalpartition/softethervpn-guided-installer-arm.git  
 cd softethervpn-guided-installer-arm  
-sudo chmod 755 softether_install_deb_arm.sh  
+sudo chmod 755 softetherinstall_deb_Arm.sh  
 sudo ./softether_install_deb_arm.sh  
 ```
 
