@@ -1,5 +1,5 @@
 # SoftEther VPN Guided Installer (Debian ARM)
-Script installs SoftEther VPN server and guides the user through its essential setup. Works on x86 and x64 ARM devices running Debian-based distros.
+Script installs SoftEther VPN server and guides the user through essential setup. Works on x86 and x64 ARM devices running Debian-based distros.
 Current testing devices:
 - Raspbery Pi 4 (Raspbian Lite Buster x64)
 - Raspberry Pi 3 (Raspbian Lite Buster x86)

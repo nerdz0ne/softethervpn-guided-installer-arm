@@ -1,17 +1,11 @@
 #!/bin/bash
 ###############################################################################
 #
-#  FILE: softether_install_deb_arm.sh
+#  FILE: softetherInstall_debArm.sh
 #  illogicalpartition (https://github.com/illogicalpartition)
 # 
-#  Script is a guided installer for SoftEther VPN server on ARM devices.
-#  Tested working on Raspbian (x86 & x64) and Armbian (x86).
-#
-#  TO RUN:
-#  > git clone https://github.com/illogicalpartition/softethervpn-guided-installer-arm.git
-#  > cd softethervpn-guided-installer-arm
-#  > sudo chmod 755 softether_install_deb_arm.sh
-#  > sudo ./softether_install_deb_arm.sh
+#  Script installs SoftEther VPN server and guides the user through essential setup. 
+#  Works on x86 and x64 ARM devices running Debian-based distros.
 #
 #  SoftEther VPN website: https://www.softether.org/
 #
@@ -56,7 +50,7 @@ echo -e "Done!\n"
 ################################
 # x64 installation
 arm64Inst() {
-  echo "x64 detected! Starting the 64-bit install process. This will probably take a while!" 
+  echo "x64 detected! Starting the 64-bit install process. This will probably take a bit!" 
   read -e -p "Begin download and install? (y/N): " choice
   if [[ "$choice" != "y"  || "$choice" != "Y" ]]; then
     echo "Install cancelled, exiting script."
@@ -232,7 +226,6 @@ fi
 ### Cleanup
 echo -e "=== Cleaning up... ==="
 sudo rm softether-vpnserver-*
-sudo rm -rf vpnserver
 sudo rm se-vpnserver.service
 sleep 2
 
