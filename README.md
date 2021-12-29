@@ -18,8 +18,8 @@ Current testing devices:
 sudo apt-get install git -y
 git clone https://github.com/illogicalpartition/softethervpn-guided-installer-arm.git  
 cd softethervpn-guided-installer-arm  
-sudo chmod 755 softetherInstall_deb_Arm.sh  
-sudo ./softetherInstall_deb_Arm.sh  
+sudo chmod 755 softetherInstall_debArm.sh  
+sudo ./softetherInstall_debArm.sh  
 ```
 
 ---

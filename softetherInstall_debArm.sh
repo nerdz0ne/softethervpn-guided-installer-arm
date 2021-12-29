@@ -51,7 +51,7 @@ echo -e "Done!\n"
 
 ### Download
 echo "=== Downloading SoftEther VPN... ==="
-if [[ $(getconf LONG_BIT) == "64"]]; then
+if [[ $(getconf LONG_BIT) == "64" ]]; then
   echo "x64 detected! Downloading the x64 package..."
   wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.38-9760-rtm/softether-vpnserver-v4.38-9760-rtm-2021.08.17-linux-arm64-64bit.tar.gz -q
 else 
