@@ -5,12 +5,10 @@ Current testing devices:
 - Raspberry Pi 3 (Raspbian Lite Buster x86)
 - Orange Pi Zero 2 (Armbian Buster x86)
   
-#### UPDATE: 4/23/2021
-- arm64 support added, tested working on Raspbian Lite Buster (x64) on Raspi 4
-- Building from source is the only way as of now, pulls the latest version from the Stable repo
-- Custom Makefile: only installs vpnserver & vpmcmd, reconfigured directories, syntax fixed for compatibility
-- Added vpncmd executable 
-- General tweaks, fixes, etc.
+#### UPDATE: 12/28/2021
+- Updated script to now use arm64 download package, rather than the custom makefile workaround and building from source. 
+- Expanded bridge choice to include interfaces aside from the the Raspi's wired and wireless interfaces (e.g. USB adapters).
+- Made DDNS an optional feature to enable/configure.
 
 ---
 
