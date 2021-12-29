@@ -122,18 +122,17 @@ done
 sudo vpncmd /server localhost /password:$pswd /cmd HubCreate $hubName /PASSWORD:$pswd > /dev/null
 echo -e "Hub created!\n"
 
-
 ### Create bridge
-echo "=== Creating bridge to $hubName... ==="
+echo "=== Selecting bridge interface for $hubName... ==="
+ints=($(ip -o link show | awk -F': ' '{print $2}'))
 echo ">> Network interfaces:"
 PS3="Select an interface [#)]: "
 select brInt in "${ints[@]}"; do 
   if [[ "$brInt" ]]; then break; else echo -e "Invalid choice, please enter a valid number."; fi
 done
 echo -e "Selected interface: $brInt \n"
-sudo vpncmd /server localhost /password:$pswd /cmd BridgeCreate $hubName /DEVICE:$brInt > /dev/null
+sudo vpncmd /server localhost /password:$pswd /cmd BridgeCreate $hubName /DEVICE:"$brInt" > /dev/null
 echo -e "Bridge created!\n"
-
 
 ### Create clients/users
 echo "=== Creating clients for $hubName... ==="
@@ -159,7 +158,6 @@ for i in $( seq 1 $numC ); do
 done
   echo -e "Client(s) finished!\n"
 
-  
 ### Configure DDNS
 # DDNS config function
 enableDDNS() {
@@ -201,7 +199,6 @@ if [[ ${choice,,} == "y"  || -z $choice ]]; then
 else
   echo -e "Skipping L2TP/IPSec configuration.\n"
 fi
-
 
 ### Cleanup
 echo -e "=== Cleaning up... ==="
