@@ -58,7 +58,8 @@ else
   echo "x86 detected! Downloading the x86 package..."
   wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.38-9760-rtm/softether-vpnserver-v4.38-9760-rtm-2021.08.17-linux-arm_eabi-32bit.tar.gz -q
 fi
-  echo -e "Done!\n"
+tar -xzf softether-vpnserver-*
+echo -e "Done!\n"
 
 ### Installation
 echo "=== Installing SoftEther VPN... ==="
